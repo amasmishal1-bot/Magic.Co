@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mug Designer</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2 style="text-align:center">Design Your Mug</h2>
+
+<div class="designer">
+<div class="mug-area">
+<img src="images/mug.png" class="mug">
+<img id="design" class="design">
+</div>
+
+<input type="file" id="upload">
+</div>
+
+<script>
+
+let design=document.getElementById("design");
+
+document.getElementById("upload").onchange=function(e){
+let reader=new FileReader();
+
+reader.onload=function(){
+design.src=reader.result;
+}
+
+reader.readAsDataURL(e.target.files[0]);
+}
+
+</script>
+
+</body>
+</html>
